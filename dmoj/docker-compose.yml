@@ -111,6 +111,32 @@ services:
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks: [nginx]
     depends_on: [site, wsevent]
+  judger1:
+    build: ./judger/
+    container_name: judger1
+    privileged: true
+    restart: always
+    depends_on:
+      - site
+      - bridged
+    volumes:
+      - ./problems/:/problems/
+    env_file:
+      - ./judger/judge1.env
+    networks: [site, db, nginx]
+  judger2:
+    build: ./judger/
+    container_name: judger2
+    privileged: true
+    restart: always
+    depends_on:
+      - site
+      - bridged
+    volumes:
+      - ./problems/:/problems/
+    env_file:
+      - ./judger/judge2.env
+    networks: [site, db, nginx] 
 networks:
   site:
   db:

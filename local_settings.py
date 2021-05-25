@@ -55,7 +55,7 @@ DATABASES = {
 # Internationalization.
 # Documentation: <https://docs.djangoproject.com/en/1.11/topics/i18n/>
 LANGUAGE_CODE = 'en-ca'
-DEFAULT_USER_TIME_ZONE = 'America/Toronto'
+DEFAULT_USER_TIME_ZONE = 'Asia/Ho_Chi_Minh'
 USE_I18N = True
 USE_L10N = True
 dUSE_TZ = True
@@ -108,7 +108,7 @@ STATICFILES_FINDERS += ('compressor.finders.CompressorFinder',)
 ADMINS = ()
 
 # The sender for the aforementioned emails.
-SERVER_EMAIL = 'DMOJ: Modern Online Judge <errors@dmoj.ca>'
+SERVER_EMAIL = 'iSOJ: iSPACE Online Judge <isoj.support@ispace.edu.vn>'
 
 
 ##################################################
@@ -133,9 +133,9 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStora
 ############################################
 
 ## DMOJ site display settings.
-SITE_NAME = 'DMOJ'
-SITE_LONG_NAME = 'DMOJ: Modern Online Judge'
-SITE_ADMIN_EMAIL = 'admin@example.com'
+SITE_NAME = 'iSOJ'
+SITE_LONG_NAME = 'iSOJ: iSPACE Online Judge'
+SITE_ADMIN_EMAIL = 'isoj.admin@ispace.edu.vn'
 TERMS_OF_SERVICE_URL = None
 
 ## Bridge controls.
@@ -149,7 +149,7 @@ BRIDGED_DJANGO_ADDRESS = [('bridged', 9998)]
 
 ## DMOJ features.
 # Set to True to enable full-text searching for problems.
-ENABLE_FTS = True
+ENABLE_FTS = False
 
 # Set of email providers to ban when a user registers, e.g., {'throwawaymail.com'}.
 BAD_MAIL_PROVIDERS = set()
@@ -207,17 +207,18 @@ TIMEZONE_MAP = 'http://naturalearth.springercarto.com/ne3_data/8192/textures/3_n
 
 ## PDF rendering settings.
 # Directory to cache the PDF.
-DMOJ_PDF_PROBLEM_CACHE = '/pdfcache'
+
+# DMOJ_PDF_PROBLEM_CACHE = '/pdfcache'
 
 # Path to use for nginx's X-Accel-Redirect feature.
 # Should be an internal location mapped to the above directory.
-DMOJ_PDF_PROBLEM_INTERNAL = '/pdfcache'
+# DMOJ_PDF_PROBLEM_INTERNAL = '/pdfcache'
 
-USE_SELENIUM = True
+# USE_SELENIUM = True
 
-DMOJ_USER_DATA_DOWNLOAD = True
-DMOJ_USER_DATA_CACHE = '/datacache'
-DMOJ_USER_DATA_INTERNAL = '/datacache'
+# DMOJ_USER_DATA_DOWNLOAD = True
+# DMOJ_USER_DATA_CACHE = '/datacache'
+# DMOJ_USER_DATA_INTERNAL = '/datacache'
 
 #############
 ## Mathoid ##
